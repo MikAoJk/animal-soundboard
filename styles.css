@@ -165,21 +165,6 @@ body{
   pointer-events:none;
 }
 
-.hint{
-  margin-top: 16px;
-  padding: 14px 16px;
-  border-radius: var(--radius);
-  border: 1px solid rgba(255,255,255,.08);
-  background: rgba(0,0,0,.18);
-  color:var(--muted);
-}
-.hint h2{
-  margin: 0 0 8px;
-  color: var(--text);
-  font-size: 14px;
-  letter-spacing: .4px;
-  text-transform: uppercase;
-}
 code{
   background: rgba(255,255,255,.08);
   padding: 2px 6px;
