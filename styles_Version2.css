@@ -1,0 +1,188 @@
+:root{
+  --bg: #0b1220;
+  --panel: #111b31;
+  --text: #eaf0ff;
+  --muted: #a7b4d6;
+  --accent: #6ea8fe;
+  --accent2: #55d6be;
+  --shadow: 0 12px 30px rgba(0,0,0,.35);
+  --radius: 16px;
+  --gap: 14px;
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--text);
+  background: radial-gradient(1200px 800px at 20% 10%, #14244a 0%, var(--bg) 55%, #050913 100%);
+}
+
+.app-header{
+  padding: 28px 18px 10px;
+  text-align:center;
+}
+.app-header h1{
+  margin:0 0 6px;
+  font-size: clamp(24px, 3.2vw, 42px);
+}
+.app-header p{
+  margin:0;
+  color:var(--muted);
+}
+
+.container{
+  width:min(980px, 92vw);
+  margin: 0 auto 40px;
+}
+
+.controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap: var(--gap);
+  align-items:center;
+  justify-content:space-between;
+  background: rgba(17,27,49,.72);
+  border: 1px solid rgba(255,255,255,.08);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.btn{
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor:pointer;
+  color: var(--text);
+  background: linear-gradient(135deg, rgba(110,168,254,.9), rgba(85,214,190,.85));
+  transition: transform .08s ease, filter .15s ease;
+}
+.btn:active{ transform: translateY(1px) scale(.99); }
+.btn.secondary{
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.btn.secondary:hover{ filter: brightness(1.15); }
+
+.volume, .toggle{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  color: var(--muted);
+  font-weight: 600;
+}
+.volume input{ width: 180px; }
+
+.grid{
+  margin-top: 16px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: var(--gap);
+}
+
+.card{
+  position:relative;
+  overflow:hidden;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(17,27,49,.58);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  cursor:pointer;
+  text-align:left;
+  min-height: 120px;
+  transition: transform .12s ease, border-color .12s ease, background .12s ease;
+}
+.card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(110,168,254,.35);
+  background: rgba(17,27,49,.68);
+}
+.card:focus-visible{
+  outline: 3px solid rgba(110,168,254,.55);
+  outline-offset: 3px;
+}
+
+.card .top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+}
+.badge{
+  font-size: 12px;
+  color: rgba(234,240,255,.95);
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.10);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.animal{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.icon{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display:grid;
+  place-items:center;
+  background: radial-gradient(circle at 30% 20%, rgba(110,168,254,.85), rgba(85,214,190,.35));
+  border: 1px solid rgba(255,255,255,.10);
+  font-size: 22px;
+}
+.meta .name{
+  font-weight: 800;
+  font-size: 18px;
+  margin:0;
+}
+.meta .file{
+  margin: 2px 0 0;
+  color:var(--muted);
+  font-size: 12px;
+  word-break: break-all;
+}
+
+.card.playing{
+  border-color: rgba(85,214,190,.5);
+}
+.card.playing::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: conic-gradient(from 180deg, rgba(85,214,190,.0), rgba(85,214,190,.35), rgba(110,168,254,.0));
+  filter: blur(18px);
+  opacity:.75;
+  pointer-events:none;
+}
+
+.hint{
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(0,0,0,.18);
+  color:var(--muted);
+}
+.hint h2{
+  margin: 0 0 8px;
+  color: var(--text);
+  font-size: 14px;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+}
+code{
+  background: rgba(255,255,255,.08);
+  padding: 2px 6px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.10);
+}

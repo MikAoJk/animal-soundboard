@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animal Soundboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Animal Soundboard</h1>
+    <p>Click an animal (or use number keys 1–8).</p>
+  </header>
+
+  <main class="container">
+    <section class="controls" aria-label="Soundboard controls">
+      <button id="stopAll" class="btn secondary" type="button">Stop all</button>
+
+      <label class="volume">
+        <span>Volume</span>
+        <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" />
+      </label>
+
+      <label class="toggle">
+        <input id="singlePlay" type="checkbox" checked />
+        <span>Single-play mode (stops others)</span>
+      </label>
+    </section>
+
+    <section id="grid" class="grid" aria-label="Animal sound buttons">
+      <!-- Buttons injected by JS -->
+    </section>
+
+    <section class="hint" aria-label="Setup hint">
+      <h2>Sounds</h2>
+      <p>
+        Create a folder named <code>sounds/</code> next to these files and add:
+        <code>cat.mp3</code>, <code>dog.mp3</code>, <code>cow.mp3</code>, <code>horse.mp3</code>,
+        <code>sheep.mp3</code>, <code>lion.mp3</code>, <code>elephant.mp3</code>, <code>duck.mp3</code>.
+      </p>
+      <p>
+        Tip: open via a local server (VS Code Live Server or <code>python -m http.server</code>) for best results.
+      </p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
